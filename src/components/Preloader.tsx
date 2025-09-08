@@ -57,12 +57,12 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
       <div className="flex flex-col items-center space-y-8">
         {/* Logo/Name */}
         <div ref={logoRef} className="text-6xl font-bold gradient-text">
-          Krushna Rathod
+          Jay Umap
         </div>
 
         {/* Subtitle */}
         <div className="text-lg text-muted-foreground font-light">
-          UI/UX Designer and Fontend Developer
+          Data Science Enthusiast | Focused on AI & Analytics
         </div>
 
         {/* Progress Bar Container */}

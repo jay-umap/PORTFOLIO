@@ -8,6 +8,9 @@ import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Education from "./Education";
 import Experience from "./Experience";
+import Certificates from "./Certificates";
+import Achievements from "./Achievements";
+
 
 const Portfolio: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -43,6 +46,8 @@ const Portfolio: React.FC = () => {
           <ProjectsSection />
           <Education />
           <Experience />
+          <Certificates/>
+          <Achievements/>
           <ContactSection />
         </main>
         <Footer />

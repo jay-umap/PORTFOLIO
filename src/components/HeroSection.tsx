@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -9,6 +8,7 @@ const HeroSection = () => {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
   const splineRef = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 3.8 });
@@ -67,9 +67,13 @@ const HeroSection = () => {
     });
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
+  // const scrollToContact = () => {
+  //   const contactSection = document.getElementById("contact");
+  //   if (contactSection) contactSection.scrollIntoView({ behavior: "smooth" });
+  // };
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projectSection");
+    if (projectsSection) projectsSection.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -95,41 +99,43 @@ const HeroSection = () => {
             ref={titleRef}
             className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight"
           >
-            Hi, I'm <span className="gradient-text">Krushna Rathod</span>
+            Hi, I'm <span className="gradient-text">Jay Umap</span>
             <br />
-            UI/UX Designer
+            {/* Aspiring Data Scientist */}
           </h1>
+                    {/* Mini Tagline */}
+          <p
+            ref={taglineRef}
+            className="text-sm sm:text-lg text-muted-foreground font-medium"
+          >
+            BCA Graduate | Data Science Enthusiast
+          </p>
+
 
           <p
             ref={subtitleRef}
             className="text-base sm:text-xl md:text-2xl text-muted-foreground font-light max-w-md sm:max-w-2xl"
           >
-            Passionate UI/UX Designer & Developer with experience in LMS
-            platforms, websites, and mobile apps.
+            Exploring Data, AI & Machine Learning to solve real-world problems with meaningful impact.
           </p>
 
-          <a
-            href="https://wa.me/919623221020?text=Hi%20Krushna"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.button
-              ref={ctaRef}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.1, rotate: -1 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full 
+          {/* CTA Button */}
+          <motion.button
+            ref={ctaRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.1, rotate: -1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={scrollToProjects}
+            className="relative flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full 
                    bg-gradient-to-r from-green-400 via-blue-500 to-purple-500
                    font-semibold shadow-lg text-white
                    backdrop-blur-md border border-white/20
                    overflow-hidden"
-            >
-              Let’s Talk
-              <FaWhatsapp size={22} className="text-green-300 drop-shadow-md" />
-            </motion.button>
-          </a>
+          >
+            View My Work
+          </motion.button>
         </div>
       </div>
     </section>

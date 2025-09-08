@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // college images
-import college1 from "/assets/ycce.jpg";
-import college2 from "/assets/gpg.png";
+import college1 from "/assets/prerna.jpg";
+import college2 from "/assets/nmv.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,19 +16,19 @@ const Education = () => {
   const educationData = [
     {
       id: 1,
-      name: "Yeshwantrao Chavan College of Engineering, Nagpur",
-      branch: "Artificial Intelligence and Data Science",
-      year: "2024 – Current",
+      name: "Dr. S C Gulahane Prerna College of Comerence , Science & Arts, Nagpur",
+      branch: "Bachelor of Computer Application (BCA)",
+      year: "2022-2025",
       image: college1,
-      link: "https://maps.app.goo.gl/ecfRDApkDbDgZQTp6",
+      link: "https://prernacollegeofcommerce.org/",
     },
     {
       id: 2,
-      name: "Government Polytechnic College, Gadchiroli",
-      branch: "Computer Engineering",
-      year: "2022 – 2024",
+      name: "Nabira Mahavidyalaya, Katol ",
+      branch: "Computer Science (HSC)",
+      year: "2020-2022",
       image: college2,
-      link: "https://maps.app.goo.gl/DMWb9Qke3tATHBV39",
+      link: "https://www.nabiramahavidyalayakatol.com/",
     },
   ];
 

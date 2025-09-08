@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import ResumeDownload from "./ResumeDownload";
 
 gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
@@ -86,7 +87,7 @@ const Footer = () => {
     },
     {
       label: "Projects",
-      id: "projects",
+      id: "projectSection",
     },
     {
       label: "Contact",
@@ -119,36 +120,37 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div className="space-y-6">
+            {/* Resume Download Button */}
+            <ResumeDownload />
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold gradient-text">RK</h3>
+              {/* <h3 className="text-2xl font-bold gradient-text">RK</h3> */}
               <p className="text-muted-foreground leading-relaxed">
-                Crafting digital experiences that inspire and engage through
-                innovative design and cutting-edge technology.
+                On a journey to solve real-world problems with Data & AI.
               </p>
             </div>
 
             {/* Social Icons */}
             <div className="flex space-x-4">
               <a
-                href="https://github.com/krushna1133"
+                href="https://github.com/jay-umap"
                 className="social-icon p-3 glass-card rounded-xl text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/krushna-rathod0077/"
+                href="https://www.linkedin.com/in/jay-umap-4804a9266/"
                 className="social-icon p-3 glass-card rounded-xl text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:krushnarathod0077@gmail.com"
+                href="mailto:umapjayr@gmail.com"
                 className="social-icon p-3 glass-card rounded-xl text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail size={20} />
               </a>
               <a
-                href="https://wa.me/919623221020?text=Hi%20Krushna"
+                href="https://wa.me/919322964068?text=Hi%20Jay"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon p-3 glass-card rounded-xl text-muted-foreground hover:text-green-500 transition-colors"
@@ -156,6 +158,7 @@ const Footer = () => {
                 <FaWhatsapp size={24} />
               </a>
             </div>
+            
           </div>
 
           {/* Quick Links */}
@@ -178,9 +181,9 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold">Get In Touch</h4>
             <div className="space-y-3 text-muted-foreground">
-              <p>krushnarathod0077@gmail.com</p>
-              <p>+91 9623221020</p>
-              <p>Nagpur, India</p>
+              <p>umapjayr@gmail.com</p>
+              <p>+91 9322964068</p>
+              <p>Pune, India</p>
             </div>
 
             {/* Status */}
@@ -197,7 +200,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground flex items-center space-x-1">
-              <span>© 2025 made by Krushna Rathod</span>
+              <span>© 2025 Jay Umap. All Rights Reserved. </span>
             </p>
 
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">

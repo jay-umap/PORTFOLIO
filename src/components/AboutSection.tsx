@@ -2,17 +2,35 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import {
+
+// FontAwesome (fa) icons
+import { 
   FaHtml5,
   FaCss3Alt,
   FaJs,
   FaReact,
   FaNodeJs,
   FaJava,
+  FaGithub,
+  FaFileExcel,
+  FaChartBar,
+  FaDatabase,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiMongodb, SiPython, SiFigma } from "react-icons/si";
-import { SiC, SiCplusplus } from "react-icons/si";
+// SimpleIcons (si) icons
+import { 
+  SiPython,
+  SiTailwindcss,
+  SiFigma,
+  SiMongodb,
+  SiScikitlearn,
+  SiC,
+  SiCplusplus,
+  SiTableau,
+  SiMysql,
+} from "react-icons/si";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,20 +40,18 @@ const AboutSection = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
 
-  const skills = [
-    { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
-    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
-    { name: "JavaScript", icon: FaJs, color: "text-yellow-400" },
-    { name: "React", icon: FaReact, color: "text-cyan-400" },
-    // { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
-    // { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-    { name: "Python", icon: SiPython, color: "text-yellow-500" },
-    { name: "Figma", icon: SiFigma, color: "text-pink-500" },
-    { name: "C", icon: SiC, color: "text-pink-500" },
-    { name: "C++", icon: SiCplusplus, color: "text-pink-500" },
-    { name: "Java", icon: FaJava, color: "text-pink-500" },
-  ];
+const skills = [
+  { name: "Python", icon: SiPython, color: "text-yellow-500" },
+  { name: "SQL (MySQL)", icon: SiMysql, color: "text-blue-500" },
+  { name: "Power BI", icon: FaChartBar, color: "text-yellow-400" },
+  { name: "Tableau", icon: SiTableau, color: "text-orange-500" },
+  { name: "Excel", icon: FaFileExcel, color: "text-green-500" },
+  { name: "Machine Learning", icon: SiScikitlearn, color: "text-orange-400" },
+
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+  { name: "GitHub", icon: FaGithub, color: "text-gray-300" },
+  { name: "C", icon: SiC, color: "text-blue-400" },
+];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -57,20 +73,20 @@ const AboutSection = () => {
       );
 
       // Image animation
-      gsap.fromTo(
-        imageRef.current,
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: "top 80%",
-          },
-        }
-      );
+      // gsap.fromTo(
+      //   imageRef.current,
+      //   { x: -100, opacity: 0 },
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     duration: 1.2,
+      //     ease: "power2.out",
+      //     scrollTrigger: {
+      //       trigger: imageRef.current,
+      //       start: "top 80%",
+      //     },
+      //   }
+      // );
 
       // Content animation
       gsap.fromTo(
@@ -113,50 +129,23 @@ const AboutSection = () => {
   return (
     <section id="about" ref={sectionRef} className="py-20 lg:py-32 relative">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Profile Images */}
-          <div ref={imageRef} className="relative">
-            <div className="flex flex-col space-y-8">
-              {/* Profile Image */}
-              <div className="relative w-64 h-64 mx-auto">
-                {/* Glowing background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-3xl animate-pulse" />
-
-                {/* Profile image container */}
-                <div className="relative w-full h-full rounded-full overflow-hidden glass-card p-4 hover:scale-105 transition-transform duration-500">
-                  <img
-                    src="/Profile.png"
-                    alt="RK - UI/UX Designer"
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-
-                {/* Floating elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-bounce" />
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-pulse" />
-              </div>
-            </div>
-          </div>
-
-          {/* Right - Content */}
-          <div ref={contentRef} className="space-y-8">
-            <div>
+        <div className="max-w-5xl mx-auto text-center space-y-12">
+          
+          {/* Content */} 
+            <div ref={contentRef} className="space-y-8" >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 About <span className="gradient-text">Me</span>
               </h2>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I’m Krushna Rathod, a dedicated UI/UX Designer & Developer
-                passionate about crafting intuitive and visually appealing
-                digital experiences. I enjoy blending creativity with
-                functionality to solve real-world problems through design and
-                code.
+                I’m <strong>Jay R Umap</strong>, a BCA Graduate and aspiring Data Scientist with a passion for turning raw data into actionable insights.  
+                Skilled in <strong>Python, SQL, Power BI, and Excel</strong>, I specialize in data analysis, visualization, and building practical solutions that solve real-world challenges.  
+                My experiences—from developing analytics projects to winning hackathons—have strengthened my problem-solving mindset, teamwork, and adaptability.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                I enjoy exploring emerging technologies, contributing to projects, and engaging with the developer community.  
+                My vision is to leverage <strong>AI and Machine Learning</strong> to create solutions that drive meaningful impact.
               </p>
             </div>
 
@@ -186,7 +175,7 @@ const AboutSection = () => {
                 })}
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </section>

@@ -15,7 +15,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    subject: "",
     message: "",
   });
 
@@ -87,7 +87,7 @@ const ContactSection = () => {
         () => {
           alert("✅ Message sent successfully!");
           setIsSubmitting(false);
-          setFormData({ name: "", email: "", phone: "", message: "" }); // added phone
+          setFormData({ name: "", email: "", subject: "", message: "" }); 
           formRef.current?.reset();
         },
         (error) => {
@@ -106,6 +106,8 @@ const ContactSection = () => {
           className="text-4xl md:text-5xl font-bold text-center mb-16"
         >
           Get In <span className="gradient-text">Touch</span>
+          {/* Accent line */}
+        <span className="block w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></span>
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -114,8 +116,7 @@ const ContactSection = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Let's Work Together</h3>
               <p className="text-muted-foreground">
-                Passionate UI/UX Designer & Developer with experience in LMS
-                platforms, websites, and mobile apps.
+                I’m open to collaborations, internships, or data-driven projects. Feel free to reach out
               </p>
             </div>
 
@@ -160,21 +161,21 @@ const ContactSection = () => {
 
               <div className="form-input">
                 <label
-                  htmlFor="phone"
+                  htmlFor="subject"
                   className="block text-sm font-medium mb-2"
                 >
-                  Phone Number
+                  Subject
                 </label>
                 <input
                   type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone} // make sure phone is in your formData state
+                  id="subject"
+                  name="subject"
+                  value={formData.subject} // make sure phone is in your formData state
                   onChange={handleInputChange}
                   required
                   className="glass-input"
-                  placeholder="+91 12345 67890"
-                  pattern="[+]{0,1}[0-9]{10,15}" // optional: basic validation for phone number
+                  placeholder="Subject of your message"
+                  
                 />
               </div>
 
@@ -193,7 +194,7 @@ const ContactSection = () => {
                   required
                   rows={5}
                   className="glass-input resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder="Your message here..."
                 />
               </div>
 
@@ -230,7 +231,7 @@ const ContactSection = () => {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">
-                      krushnarathod0077@gmail.com
+                      umapjayr@gmail.com
                     </p>
                   </div>
                 </div>
@@ -241,7 +242,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+91 9623221020</p>
+                    <p className="text-muted-foreground">+91 9322964068</p>
                   </div>
                 </div>
 
@@ -251,7 +252,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">Nagpur, India</p>
+                    <p className="text-muted-foreground">Pune, India</p>
                   </div>
                 </div>
               </div>
@@ -263,7 +264,7 @@ const ContactSection = () => {
 
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/krushna1133"
+                  href="https://github.com/jay-umap"
                   className="p-4 glass-card rounded-xl hover:scale-110 transition-transform duration-300 group"
                 >
                   <Github
@@ -273,7 +274,7 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/krushna-rathod0077"
+                  href="https://www.linkedin.com/in/jay-umap-4804a9266/"
                   className="p-4 glass-card rounded-xl hover:scale-110 transition-transform duration-300 group"
                 >
                   <Linkedin
@@ -283,7 +284,7 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                  href="mailto:krushnarathod0077@gmail.com"
+                  href="mailto:umapjayr@gmail.com"
                   className="p-4 glass-card rounded-xl hover:scale-110 transition-transform duration-300 group"
                 >
                   <Mail
@@ -292,7 +293,7 @@ const ContactSection = () => {
                   />
                 </a>
                 <a
-                  href="https://wa.me/919623221020?text=Hi%20Krushna"
+                  href="https://wa.me/9322964068"
                   className="p-4 glass-card rounded-xl hover:scale-110 transition-transform duration-300 group"
                 >
                   <FaWhatsapp
@@ -312,9 +313,7 @@ const ContactSection = () => {
                 </span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm currently available for freelance projects and full-time
-                opportunities. Let's discuss how we can bring your ideas to
-                life!
+                Currently available for internships and freelance projects.
               </p>
             </div>
           </div>
